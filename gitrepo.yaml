@@ -1,0 +1,15 @@
+kind: GitRepo
+apiVersion: fleet.cattle.io/v1alpha1
+metadata:
+  name: fleet-longhorn
+  namespace: fleet-default
+spec:
+  repo: git@github.com:atoy3731/fleet-longhorn.git
+  branch: main
+  targets:
+  - name: longhorn
+    clusterSelector:
+      matchLabels:
+        longhorn: enabled
+  paths:
+  - "./longhorn"
